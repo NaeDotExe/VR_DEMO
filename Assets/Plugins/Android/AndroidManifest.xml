@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+  <!-- Permissions nécessaires pour le Hand Tracking -->
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.USE_HAND_TRACKING" />
+
+  <!-- Déclaration des fonctionnalités pour éviter les conflits -->
+  <uses-feature android:name="android.hardware.camera.ar" android:required="false" />
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
+  <uses-feature android:name="oculus.software.handtracking" android:required="true" />
+
+  <application>
+    <activity android:name="com.unity3d.player.UnityPlayerActivity"
+              android:theme="@style/UnityThemeSelector">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+    </activity>
+
+    <!-- Activation du Hand Tracking et des fonctionnalités expérimentales -->
+    <meta-data android:name="com.oculus.features.handtracking" android:value="true"/>
+    <meta-data android:name="com.oculus.features.experimental" android:value="true"/>
+  </application>
+</manifest>
