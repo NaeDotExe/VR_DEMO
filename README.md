@@ -1,2 +1,3 @@
 Demo avec OpenXR + XRHands
-XRHands ne fonctionne pas ? (mains pas détectées / affichées)
+
+Si UltraLeap Tracking est installé sur le pc, s'assurer que l'option OpenXR est bien désactivé
